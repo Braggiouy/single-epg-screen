@@ -1,4 +1,3 @@
-# Created by .ignore support plugin (hsz.mobi)
 ### Node template
 # Logs
 logs
@@ -92,3 +91,6 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+
+guide.md
+realREADME.md
