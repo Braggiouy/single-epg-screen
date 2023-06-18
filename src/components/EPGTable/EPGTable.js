@@ -12,8 +12,7 @@ const EPGTable = () => {
       try {
         const response = await fetch("http://localhost:1337/epg");
         const jsonData = await response.json();
-        console.log("jsonData", jsonData);
-        setData(jsonData);
+        setData(jsonData.channels);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -32,19 +31,21 @@ const EPGTable = () => {
         {/* CurrentTime */}
         <CurrentTimeLine />
         {/* 1 row */}
-        <ChannelRow />
-        {/* 2 row */}
-        <ChannelRow />
-        {/* 3 row */}
-        <ChannelRow />
-        {/* 4 row */}
-        <ChannelRow />
-        {/* 5 row */}
-        <ChannelRow />
-        {/* 6 row */}
-        <ChannelRow />
-        {/* 7 row */}
-        <ChannelRow />
+        {data ? (
+          data.map((item) => {
+            return (
+              <ChannelRow
+                id={item.id}
+                key={item.id}
+                channelTitle={item.title}
+                channelImage={item.images.logo}
+                schedules={item.schedules}
+              />
+            );
+          })
+        ) : (
+          <p>Loading</p>
+        )}
       </div>
     </div>
   );

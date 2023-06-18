@@ -1,7 +1,9 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 const Header = () => {
   return (
-    <header className="flex justify-between items-center px-4 py-2 bg-gray-800 text-white">
+    <header className="flex justify-between items-center px-4 py-2 bg-black text-white">
       {/* Profile Icon */}
       <div className="hidden md:block">
         <img
@@ -24,20 +26,9 @@ const Header = () => {
       <div className="flex items-center">
         {/* Mobile and Tablet View */}
         <div className="block md:hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            />
-          </svg>
+          <a href="#" className="text-xl text-white">
+            <FontAwesomeIcon icon={faSearch} />
+          </a>
         </div>
 
         {/* Desktop View */}

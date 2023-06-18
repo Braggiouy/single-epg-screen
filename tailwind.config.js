@@ -7,6 +7,11 @@ module.exports = {
       backgroundColor: {
         "custom-gray": "rgb(32, 32, 32)",
         "program-background": "rgb(17, 17, 17)",
+        "now-button": "rgb(225, 162, 30)",
+      },
+      textColor: {
+        "custom-faded-grey": "rgb(155, 155, 155)",
+        "custom-text-gold": "rgb(225, 162, 30)",
       },
     },
   },

@@ -1,172 +1,43 @@
 import React from "react";
+import { formatTimeTo24Hour } from "../../../utils/utils";
+import { calculateWidth } from "../../../utils/utils";
 
-export default function ChannelRow() {
+export default function ChannelRow({
+  id,
+  channelTitle,
+  channelImage,
+  schedules,
+}) {
+  let counter = 0;
   return (
-    <div className="flex flex-row h-16" id="timeline">
-      <div className="bg-custom-gray sticky left-0 w-20 text-white flex justify-center items-center text-center">
-        CHANNEL
+    <div className="flex flex-row h-16" id={id}>
+      <div className="bg-custom-gray sticky left-0 w-20 text-white flex justify-center items-center text-center z-30">
+        <img src={channelImage} alt={channelTitle}></img>
       </div>
       <div className="flex flex-nowrap flex-row justify-center">
-        <a href="/dummy_program_id">
-          <div className="bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid  p-3">
-            <div className=" overflow-hidden flex-col min-w-max text-white">
-              <div> Game of Thrones</div>
-              <div className="flex flex-1 flex-row text-gray-400">
-                <span>00:00 - 00:40</span>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="/dummy_program_id">
-          <div className="bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid  p-3">
-            <div className="overflow-hidden flex-col min-w-max text-white">
-              <div> Game of Thrones</div>
-              <div className="flex flex-1 flex-row text-gray-400">
-                <span>00:00 - 00:40</span>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="/dummy_program_id">
-          <div className="bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid  p-3">
-            <div className=" overflow-hidden flex-col min-w-max text-white">
-              <div> Game of Thrones</div>
-              <div className="flex flex-1 flex-row text-gray-400">
-                <span>00:00 - 00:40</span>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="/dummy_program_id">
-          <div className="bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid  p-3">
-            <div className=" overflow-hidden flex-col min-w-max text-white">
-              <div> Game of Thrones</div>
-              <div className="flex flex-1 flex-row text-gray-400">
-                <span>00:00 - 00:40</span>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="/dummy_program_id">
-          <div className="bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid  p-3">
-            <div className=" overflow-hidden flex-col min-w-max text-white">
-              <div> Game of Thrones</div>
-              <div className="flex flex-1 flex-row text-gray-400">
-                <span>00:00 - 00:40</span>
-              </div>
-            </div>
-          </div>
-        </a>{" "}
-        <a href="/dummy_program_id">
-          <div className="bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid  p-3">
-            <div className=" overflow-hidden flex-col min-w-max text-white">
-              <div> Game of Thrones</div>
-              <div className="flex flex-1 flex-row text-gray-400">
-                <span>00:00 - 00:40</span>
-              </div>
-            </div>
-          </div>
-        </a>{" "}
-        <a href="/dummy_program_id">
-          <div className="bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid  p-3">
-            <div className=" overflow-hidden flex-col min-w-max text-white">
-              <div> Game of Thrones</div>
-              <div className="flex flex-1 flex-row text-gray-400">
-                <span>00:00 - 00:40</span>
-              </div>
-            </div>
-          </div>
-        </a>{" "}
-        <a href="/dummy_program_id">
-          <div className="bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid  p-3">
-            <div className=" overflow-hidden flex-col min-w-max text-white">
-              <div> Game of Thrones</div>
-              <div className="flex flex-1 flex-row text-gray-400">
-                <span>00:00 - 00:40</span>
-              </div>
-            </div>
-          </div>
-        </a>{" "}
-        <a href="/dummy_program_id">
-          <div className="bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid  p-3">
-            <div className=" overflow-hidden flex-col min-w-max text-white">
-              <div> Game of Thrones</div>
-              <div className="flex flex-1 flex-row text-gray-400">
-                <span>00:00 - 00:40</span>
-              </div>
-            </div>
-          </div>
-        </a>{" "}
-        <a href="/dummy_program_id">
-          <div className="bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid  p-3">
-            <div className=" overflow-hidden flex-col min-w-max text-white">
-              <div> Game of Thrones</div>
-              <div className="flex flex-1 flex-row text-gray-400">
-                <span>00:00 - 00:40</span>
-              </div>
-            </div>
-          </div>
-        </a>{" "}
-        <a href="/dummy_program_id">
-          <div className="bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid  p-3">
-            <div className=" overflow-hidden flex-col min-w-max text-white">
-              <div> Game of Thrones</div>
-              <div className="flex flex-1 flex-row text-gray-400">
-                <span>00:00 - 00:40</span>
-              </div>
-            </div>
-          </div>
-        </a>{" "}
-        <a href="/dummy_program_id">
-          <div className="bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid  p-3">
-            <div className=" overflow-hidden flex-col min-w-max text-white">
-              <div> Game of Thrones</div>
-              <div className="flex flex-1 flex-row text-gray-400">
-                <span>00:00 - 00:40</span>
-              </div>
-            </div>
-          </div>
-        </a>{" "}
-        <a href="/dummy_program_id">
-          <div className="bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid  p-3">
-            <div className=" overflow-hidden flex-col min-w-max text-white">
-              <div> Game of Thrones</div>
-              <div className="flex flex-1 flex-row text-gray-400">
-                <span>00:00 - 00:40</span>
-              </div>
-            </div>
-          </div>
-        </a>{" "}
-        <a href="/dummy_program_id">
-          <div className="bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid  p-3">
-            <div className=" overflow-hidden flex-col min-w-max text-white">
-              <div> Game of Thrones</div>
-              <div className="flex flex-1 flex-row text-gray-400">
-                <span>00:00 - 00:40</span>
-              </div>
-            </div>
-          </div>
-        </a>{" "}
-        <a href="/dummy_program_id">
-          <div className="bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid  p-3">
-            <div className=" overflow-hidden flex-col min-w-max text-white">
-              <div> Game of Thrones</div>
-              <div className="flex flex-1 flex-row text-gray-400">
-                <span>00:00 - 00:40</span>
-              </div>
-            </div>
-          </div>
-        </a>{" "}
-        <a href="/dummy_program_id">
-          <div className="bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid  p-3">
-            <div className=" overflow-hidden flex-col min-w-max text-white">
-              <div> Game of Thrones</div>
-              <div className="flex flex-1 flex-row text-gray-400">
-                <span>00:00 - 00:40</span>
-              </div>
-            </div>
-          </div>
-        </a>
+        {schedules
+          ? schedules.map((program) => {
+              const newkey = (counter += 1);
+              const width = calculateWidth(program.start, program.end);
+              return (
+                <a href={program.id} key={program.id + newkey}>
+                  <div
+                    className={`w-44 bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid p-3 `}
+                  >
+                    <div className=" overflow-hidden flex-col min-w-max text-white">
+                      <div>{program.title}</div>
+                      <div className="flex flex-1 flex-row text-gray-400">
+                        <span>
+                          {formatTimeTo24Hour(program.start)} -{" "}
+                          {formatTimeTo24Hour(program.end)}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              );
+            })
+          : null}
       </div>
     </div>
   );
