@@ -20,6 +20,9 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".jsx", ".json"],
+    alias: {
+      tailwindcss: path.resolve(__dirname, "node_modules/tailwindcss"),
+    },
   },
   module: {
     rules: [
@@ -27,6 +30,23 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: "babel-loader",
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[hash].[ext]",
+              outputPath: "images",
+            },
+          },
+        ],
       },
     ],
   },
