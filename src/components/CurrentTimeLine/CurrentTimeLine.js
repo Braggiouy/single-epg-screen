@@ -1,45 +1,30 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 
-export default function CurrentTimeLine() {
-  const [currentTime, setCurrentTime] = useState("");
-  const [distanceFromLeft, setDistanceFromLeft] = useState(0); // Initialize distanceFromLeft state
-
+export default function CurrentTimeLine({ initialPosition }) {
+  const [distanceFromLeft, setDistanceFromLeft] = useState(initialPosition); // Initialize distanceFromLeft state
+  0;
   const lineBarRef = useRef(null);
 
   const updateTimeLinePosition = useCallback(() => {
-    const dimensions = lineBarRef.current?.getBoundingClientRect();
-    if (!dimensions) return;
+    // 1 hr equals 240px. Then each minute is 4px.
+    // Every 15 seconds we move the bar 1px to the right
 
-    setDistanceFromLeft((prevDistance) => prevDistance + 5); // Increase distanceFromLeft by 5
-    const distanceFromLeft = dimensions.left;
-    // console.log(distanceFromLeft);
-    // console.log(currentTime);
-  }, [distanceFromLeft, currentTime]);
-
-  const updateCurrentTime = () => {
-    const now = new Date();
-    const timeOptions = {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    };
-    setCurrentTime(now.toLocaleTimeString([], timeOptions));
-  };
+    setDistanceFromLeft((prevDistance) => prevDistance + 1); // Increase distanceFromLeft by 1
+  }, [distanceFromLeft]);
 
   useEffect(() => {
     // Update current time
-    updateCurrentTime();
-    const interval = setInterval(updateCurrentTime, 12000);
-    const interval2 = setInterval(updateTimeLinePosition, 12000);
+
+    // every 15 sec we update the timeLinePosition
+    const interval = setInterval(updateTimeLinePosition, 15000);
 
     return () => {
       clearInterval(interval);
-      clearInterval(interval2);
     };
-  }, [updateCurrentTime, currentTime]);
+  }, []);
 
   useEffect(() => {
-    // Move window focus to currentTimeLine when component is attached to DOM
+    // Move window focus to currentTimeLine component, when  is attached to DOM
     lineBarRef?.current.scrollIntoView({
       behavior: "smooth",
       inline: "center",

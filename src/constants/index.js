@@ -1,0 +1,1 @@
+export const EQUIVALENT_RATIO = 5840 / 2400;

@@ -1,24 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import CalendarRow from "../CalendarRow/CalendarRow";
 import TimeSpanRow from "../TimeSpanRow/TimeSpanRow";
 import ChannelRow from "../ChannelRow/ChannelRow";
 import CurrentTimeLine from "../CurrentTimeLine/CurrentTimeLine";
+import { transformToMilitaryTime } from "../../../utils/utils";
+import { EQUIVALENT_RATIO } from "../../constants";
+import { fetchData } from "../../services/api";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { LoadingSpinner } from "../LoadingSpinner";
 
 const EPGTable = () => {
   const [data, setData] = useState(null);
 
+  const initialCurentTimeLinePosition = useMemo(() => {
+    const currentTime = transformToMilitaryTime();
+    const currentTimeLinePosition = Math.floor(currentTime * EQUIVALENT_RATIO);
+    return currentTimeLinePosition || 0;
+  }, []);
+
   useEffect(() => {
-    const fetchData = async () => {
+    const retireveData = async () => {
       try {
-        const response = await fetch("http://localhost:1337/epg");
-        const jsonData = await response.json();
-        setData(jsonData.channels);
+        const response = await fetchData();
+        setData(response);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
 
-    fetchData();
+    retireveData();
   }, []);
 
   return (
@@ -29,7 +39,7 @@ const EPGTable = () => {
         {/* Timespan row */}
         <TimeSpanRow />
         {/* CurrentTime */}
-        <CurrentTimeLine />
+        <CurrentTimeLine initialPosition={initialCurentTimeLinePosition} />
         {/* 1 row */}
         {data ? (
           data.map((item) => {
@@ -44,7 +54,7 @@ const EPGTable = () => {
             );
           })
         ) : (
-          <p>Loading</p>
+          <LoadingSpinner />
         )}
       </div>
     </div>

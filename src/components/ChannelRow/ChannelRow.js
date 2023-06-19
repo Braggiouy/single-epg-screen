@@ -9,6 +9,9 @@ export default function ChannelRow({
   schedules,
 }) {
   let counter = 0;
+
+  const calculateProgramCellWidth = () => {};
+
   return (
     <div className="flex flex-row h-16" id={id}>
       <div className="bg-custom-gray sticky left-0 w-20 text-white flex justify-center items-center text-center z-30">
@@ -19,10 +22,14 @@ export default function ChannelRow({
           ? schedules.map((program) => {
               const newkey = (counter += 1);
               const width = calculateWidth(program.start, program.end);
+
               return (
                 <a href={program.id} key={program.id + newkey}>
                   <div
-                    className={`w-44 bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid p-3 `}
+                    className={
+                      "bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid p-3"
+                    }
+                    style={{ width: `${width}px` }}
                   >
                     <div className=" overflow-hidden flex-col min-w-max text-white">
                       <div>{program.title}</div>

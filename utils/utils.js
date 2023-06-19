@@ -68,32 +68,12 @@ export const generateTimespanArray = () => {
 export const calculateWidth = (startTime, endTime) => {
   const startTimeObj = new Date(startTime);
   const endTimeObj = new Date(endTime);
-  const durationMinutes = Math.round((endTimeObj - startTimeObj) / (1000 * 60));
+  const durationMinutes = (endTimeObj - startTimeObj) / (1000 * 60);
+  if (durationMinutes <= 0) 0;
 
-  if (durationMinutes <= 0) {
-    return "w-0";
-  }
+  const width = durationMinutes * 4;
 
-  const tailwindWidths = [
-    { width: "w-60", duration: 60 },
-    { width: "w-32", duration: 30 },
-    { width: "w-16", duration: 15 },
-    { width: "w-48", duration: 45 },
-    { width: "w-20", duration: 20 },
-    { width: "w-44", duration: 40 },
-  ];
-
-  const closestWidth = tailwindWidths.reduce((prev, curr) => {
-    if (
-      Math.abs(curr.duration - durationMinutes) <
-      Math.abs(prev.duration - durationMinutes)
-    ) {
-      return curr;
-    }
-    return prev;
-  });
-
-  return closestWidth.width;
+  return width;
 };
 
 export const focusCurrentTime = () => {
@@ -104,4 +84,24 @@ export const focusCurrentTime = () => {
     behavior: "smooth",
     inline: "center",
   });
+};
+
+export const transformToMilitaryTime = () => {
+  const now = new Date();
+  const timeOptions = {
+    hour: "2-digit",
+    minute: "2-digit",
+  };
+  const currentTime = now.toLocaleTimeString([], timeOptions);
+
+  let militaryTime = currentTime.replace(/\D/g, ""); // Remove non-digit characters
+
+  if (currentTime.includes("PM")) {
+    const hours = parseInt(militaryTime.substr(0, 2), 10);
+    militaryTime = ((hours % 12) + 12).toString() + militaryTime.substr(2);
+  } else {
+    militaryTime = militaryTime.substr(0, 4);
+  }
+
+  return militaryTime;
 };
