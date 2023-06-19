@@ -1,5 +1,7 @@
 import React from "react";
 import { getMonthDays, getCurrentDay } from "../../../utils/utils";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 export default function CalendarRow() {
   const monthArray = getMonthDays();
@@ -8,7 +10,7 @@ export default function CalendarRow() {
   return (
     <div className="flex flex-row h-16" id="timeline">
       <div className="bg-custom-gray sticky left-0 w-20 text-white flex justify-center items-center text-center">
-        STAR
+        <FontAwesomeIcon icon={faStar} />
       </div>
       <div className="flex flex-nowrap flex-row justify-center">
         {monthArray.map((day) => {
