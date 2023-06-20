@@ -4,8 +4,7 @@
   "description": "EPG Channel List",
   "main": "./index.js",
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NoriginMedia/candidate-tester.git"
+    "type": "git"
   },
   "scripts": {
     "start:mock-api": "./node_modules/.bin/osprey-mock-service -f ./node_modules/nm-mock-api/demo.raml -p 1337 --cors",
@@ -15,10 +14,6 @@
   },
   "author": "Bruno Aggierni",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/NoriginMedia/candidate-tester/issues"
-  },
-  "homepage": "https://github.com/NoriginMedia/candidate-tester#readme",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",

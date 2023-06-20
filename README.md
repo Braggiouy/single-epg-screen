@@ -1,80 +1,50 @@
-## Candidate-Tester
-This Repo is intended to instruct new Frontend developer (Native & Web) candidates on the steps to follow for completing the Norigin Media testing task.
+# EPG Screen Project
 
----
+by Bruno Aggierni
 
-#### What we want to assess:
+## About
 
-* Your coding skills.
-* Intuition for design & UX.
-* Multi Screen / Cross Browser allocations.
-* Platform, Framework & Tooling knowledge.
-* App packaging and production readiness.
+The EPG (Electronic Program Guide) Screen project is a web application that displays a list of TV channels along with their program schedules. Users can browse through the channels and access detailed information about each program by navigating to the Individual Program Detail Page (IDP).
 
-#### Requirements :
+## Technologies Used
 
- * Build a single screen web or native application (**EPG Screen**) using your choice of framework / tooling
- 
-    **NOTE:** For *Web Developers*: React, Vue.js, React-Native, Vanilla JS / Typescript for example - No restrictions apply, however try to avoid using project generators / starter-kits / sample projects were possible.
-    
-    **NOTE:** For *Native Developers*: Java, Kotlin, ObjectiveC - No restrictions to tooling or frameworks apply.
- 
- * Use the designs in the `./mockups` folder to guide your work. 
- * Use **Mock-Api** package included to supply the EPG data. See `package.json`.
- * For Web developers task submission is expected to be in NPM package format (**Preferably via GitHub**) with simple steps to install and run. Pass the link to your contact with our management or your recruiter when you're done. 
- 
-    **NOTE:** For *Native Developers*: Alternative methods of submission are acceptible for Android & iOS projects.
- 
- * Task is not expected to take any more than 2 days of your time.
+Project was generated entirely from scratch, without using any template, package nor starter pack. The following technologies were used :
 
-**NOTE:** There is no need to use this tester repo as the basis for your task. You can rework it, supply your own structure and include the libraries / dependencies however you prefer.
+- React: JavaScript library for building user interfaces
+- Webpack: Module bundler for JavaScript applications
+- Babel: JavaScript compiler for converting modern JavaScript code into backward-compatible versions
+- JavaScript: Programming language used for the project's logic
+- Functional Components and Hooks: Utilized for writing modular and reusable code
+- Tailwind CSS: Utility-first CSS framework for styling the application
 
- * A base level of interactivity is expected regarding the progression of time and how this is refected in the EPG. For example the yellow line indicating the current program should update and change, as well as a functional auto-scroll shortcut to be triggered when pressing on the "NOW" button.
+## How to Run the Project
 
-#### Cool to have (But not required and wont negatively impact assessment):
+1. Clone the project repository to your local machine.
+2. Open a terminal and navigate to the project directory.
+3. Run the command `npm install` to install all project dependencies.
+4. Start the API server by running `npm run start:api`. This will retrieve the data required to populate the application.
+5. Start the development server by running `npm run start`. This will build the project using Webpack and deploy it on a local server.
+6. Open your web browser and visit `http://localhost:5000/` to access the application.
 
-* Add more interactions, animations or just nail the UX.
-* Responsive layouts for multi-screen support.
-* Make performance and optimization considerations.
-* Additional screens using mock data api.
-* Additional EPG showing an alternative layout.
+## Challenges
 
+During the development of this project, several challenges were encountered:
 
----
-## Design Example:
+- Starting from scratch without using starter packs or templates required setting up the project configuration and build processes manually.
+- Implementing the moving timeline marker involved complex logic to synchronize with the program schedule.
+- Styling the different overlays, such as channel logos and program details, required careful design considerations and CSS customization.
+- Working with Webpack configuration and dependencies required constant troubleshooting and tweaking to ensure a smooth development experience.
 
-We have included some mockup designs to act as a guide. You can find them in the `./mockups` folder.
+## Future Implementations
 
-Example EPG design:
+There are several potential enhancements for the future:
 
-![alt text](https://raw.githubusercontent.com/NoriginMedia/candidate-tester/master/mockups/EPG_small.png "Logo Title Text 1")
+- Make the header transparent when entering the Individual Program Detail Page (IDP) to provide a more immersive experience.
+- Improve responsiveness across different screen resolutions, as the main focus of the project was mobile devices based on the provided mockup images.
+- Consider integrating TypeScript for improved type checking and development productivity.
+- Evaluate the use of Redux or Zustand for state management, especially if the project scales and requires more complex data flow and shared state among components. Recently been reading and learning about zustand, and it might be a better fit.
+- Instead of having visible scrolling bars, best would be to implement a drag & drop behaviour, for a better UI, but mostly, a better UX.
+- Modify the IDP. Currently its values are hardcoded. Best would be to pass the value of the program we select, and then IDP will be completly populated with those values.
+- Within the IDP, identify whether program is currently live, upcoming, or past.
 
-
-
-NOTE: Additional screens are optional and only if you really want to impress us with your skillz (Yes.. with a Z) should you add them to your app.
-
----
-
-## Mock-API:
-
-We have provided a basic mock api to supply EPG data for this task. 
-
-This is packaged as a standard Node NPM module. To install simply run: `-> npm install` from the project root directory.
-Of course Node.JS should be installed beforehand. For Native Developers not familar with NPM here is the [NPM Documentation](https://docs.npmjs.com/getting-started/installing-node)
-
-To run the update & run mock-api server execute the command below:
-
-```
--> npm run start
-```
-You should see the server start on port 1337.
-```
-Mock service running at http://localhost:1337
-```
-You can now request data from the mock-api: 
-`Try It: http://localhost:1337/epg`
-
-
-For additional information you can find the package and the documentation here: [Norigin Mock-API](https://github.com/NoriginMedia/mock-api/tree/cloudberry)
-
----
+Feel free to explore and contribute to this project. If you have any questions or suggestions, please do not hesitate to reach out.
