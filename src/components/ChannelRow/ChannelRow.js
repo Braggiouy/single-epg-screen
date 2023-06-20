@@ -21,9 +21,11 @@ export default function ChannelRow({
           ? schedules.map((program) => {
               const newkey = (counter += 1);
               const width = calculateWidth(program.start, program.end);
+              const programLink = `/detail-page/${program.id}`; // Construct the correct path
 
+              // {`${program.id}`}
               return (
-                <Link to={`/${program.id}`} key={program.id + newkey}>
+                <Link to={programLink} key={program.id + newkey}>
                   <div
                     className={
                       "bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid p-3"

@@ -26,7 +26,7 @@ const App = () => {
             </Layout>
           }
         />
-        <Route path="/:id" element={<DetailPage />} />
+        <Route path="/detail-page/:id" element={<DetailPage />} />
       </Routes>
     </Router>
   );
