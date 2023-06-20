@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { formatTimeTo24Hour } from "../../../utils/utils";
 import { calculateWidth } from "../../../utils/utils";
 
@@ -9,8 +10,6 @@ export default function ChannelRow({
   schedules,
 }) {
   let counter = 0;
-
-  const calculateProgramCellWidth = () => {};
 
   return (
     <div className="flex flex-row h-16" id={id}>
@@ -24,7 +23,7 @@ export default function ChannelRow({
               const width = calculateWidth(program.start, program.end);
 
               return (
-                <a href={program.id} key={program.id + newkey}>
+                <Link to={`/${program.id}`} key={program.id + newkey}>
                   <div
                     className={
                       "bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid p-3"
@@ -41,7 +40,7 @@ export default function ChannelRow({
                       </div>
                     </div>
                   </div>
-                </a>
+                </Link>
               );
             })
           : null}
