@@ -1,17 +1,38 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSearch,
+  faUser,
+  faArrowLeft,
+} from "@fortawesome/free-solid-svg-icons";
+import { useLocation, Link } from "react-router-dom";
+
 const Header = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
   return (
-    <header className="flex justify-between items-center px-4 py-2 bg-black text-white">
-      {/* Profile Icon */}
-      <div className="hidden md:block">
-        <FontAwesomeIcon icon={faUser} className="h-4 w-4" />
-      </div>
+    <header
+      className={`flex flex-row justify-between items-center px-4 py-2 bg-black text-white `}
+    >
+      {/* Profile Icon or previous page arrow, depends on the user's location*/}
+      {isHomePage ? (
+        <div className="h-4 w-4">
+          <FontAwesomeIcon icon={faUser} />
+        </div>
+      ) : (
+        <Link to="/">
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </Link>
+      )}
 
       {/* Logo */}
       <div className="flex items-center justify-center">
-        <img src="/company-logo.png" alt="Company Logo" className="h-4 w-4" />
+        <img
+          src={window.location.origin + "/assets/company-logo.png"}
+          alt="Company Logo"
+          className="h-4 w-4"
+        />
       </div>
 
       {/* Search Box or Magnifier Icon */}

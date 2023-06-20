@@ -1,7 +1,7 @@
 {
   "name": "bruno-aggierni",
   "version": "0.0.1",
-  "description": "This is intended to used as instructions for completing the Norigin Media testing task for new candidates",
+  "description": "EPG Channel List",
   "main": "./index.js",
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
     "start": "webpack-dev-server .",
     "build": "webpack ."
   },
-  "author": "Dylan Thomson",
+  "author": "Bruno Aggierni",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/NoriginMedia/candidate-tester/issues"

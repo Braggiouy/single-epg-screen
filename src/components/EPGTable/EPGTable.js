@@ -32,7 +32,7 @@ const EPGTable = () => {
   }, []);
 
   return (
-    <div className="flex flex-nowrap flex-col overflow-x-auto items-baseline">
+    <div className="flex flex-nowrap flex-col overflow-x-auto items-baseline scrollbar-thin scrollbar-thumb-red-500 scrollbar-track-gray-300">
       <div className="relative">
         {/* Calendar row */}
         <CalendarRow />
