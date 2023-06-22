@@ -1,4 +1,6 @@
-![Screenshot 2023-06-22 at 13 18 35](https://github.com/Braggiouy/single-epg-screen/assets/72386708/e0d7a598-4510-437e-af85-23f515f8a425)# EPG Screen Project
+# EPG Screen Project
+
+![Screenshot 2023-06-22 at 13 18 35](https://github.com/Braggiouy/single-epg-screen/assets/72386708/e0d7a598-4510-437e-af85-23f515f8a425)
 
 by Bruno Aggierni
 
@@ -8,7 +10,7 @@ The EPG (Electronic Program Guide) Screen project is a web application that disp
 
 ## Technologies Used
 
-Project was generated entirely from scratch, without using any template, package nor starter pack. The following technologies were used :
+Project was generated entirely from scratch, without using any template, package nor starter pack. The following technologies were used:
 
 - React: JavaScript library for building user interfaces
 - Webpack: Module bundler for JavaScript applications
@@ -42,13 +44,9 @@ There are several potential enhancements for the future:
 - Make the header transparent when entering the Individual Program Detail Page (IDP) to provide a more immersive experience.
 - Improve responsiveness across different screen resolutions, as the main focus of the project was mobile devices based on the provided mockup images.
 - Consider integrating TypeScript for improved type checking and development productivity.
-- Evaluate the use of Redux or Zustand for state management, especially if the project scales and requires more complex data flow and shared state among components. Recently been reading and learning about zustand, and it might be a better fit.
-- Instead of having visible scrolling bars, best would be to implement a drag & drop behaviour, for a better UI, but mostly, a better UX.
-- Modify the IDP. Currently its values are hardcoded. Best would be to pass the value of the program we select, and then IDP will be completly populated with those values.
-- Within the IDP, identify whether program is currently live, upcoming, or past.
+- Evaluate the use of Redux or Zustand for state management, especially if the project scales and requires more complex data flow and shared state among components. Recently been reading and learning about Zustand, and it might be a better fit.
+- Instead of having visible scrolling bars, it would be better to implement a drag & drop behavior for a better UI and UX.
+- Modify the IDP. Currently, its values are hardcoded. It would be best to pass the value of the selected program, and then the IDP will be completely populated with those values.
+- Within the IDP, identify whether a program is currently live, upcoming, or past.
 
 Feel free to explore and contribute to this project. If you have any questions or suggestions, please do not hesitate to reach out.
-
-## Screenshot sample
-![Screenshot 2023-06-22 at 13 19 01](https://github.com/Braggiouy/single-epg-screen/assets/72386708/69b59bf8-b093-4ab8-8795-62716653cab6)
-
