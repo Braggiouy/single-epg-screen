@@ -1,4 +1,4 @@
-# EPG Screen Project
+![Screenshot 2023-06-22 at 13 18 35](https://github.com/Braggiouy/single-epg-screen/assets/72386708/e0d7a598-4510-437e-af85-23f515f8a425)# EPG Screen Project
 
 by Bruno Aggierni
 
@@ -48,3 +48,7 @@ There are several potential enhancements for the future:
 - Within the IDP, identify whether program is currently live, upcoming, or past.
 
 Feel free to explore and contribute to this project. If you have any questions or suggestions, please do not hesitate to reach out.
+
+## Screenshot sample
+![Screenshot 2023-06-22 at 13 19 01](https://github.com/Braggiouy/single-epg-screen/assets/72386708/69b59bf8-b093-4ab8-8795-62716653cab6)
+
