@@ -28,15 +28,34 @@ export default function DetailPage() {
     vestibulum dignissim purus, in pulvinar orci.`;
 
   const truncatedText = `${paragraphText.substring(0, 200)}...`;
+  const fadedEffect = {
+    backgroundImage:
+      "linear-gradient(180deg, blue 3%, transparent 25%, transparent 20%, blue 65%)",
+  };
 
   return (
     <>
       <Header />
-      <img
-        src={downtonAbbey}
-        className="bg-no-repeat bg-cover bg-bottom bg-fixed"
-      ></img>
-      <div className="p-3 shadow-2xl shadow-black bg-black text-white ">
+      <div style={{ position: "relative" }}>
+        <img
+          src={downtonAbbey}
+          className="bg-no-repeat bg-cover bg-bottom bg-fixed"
+          style={{ opacity: 0.7 }}
+          alt="Downton Abbey"
+        />
+        <div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: "33.33%",
+            backgroundImage:
+              "linear-gradient(180deg, transparent 20%, black 65%)",
+          }}
+        ></div>
+      </div>
+      <div className="p-3 shadow-2xl shadow-black bg-black text-white">
         <div className="flex flex-row items-center px-1">
           <div className="w-14 h-14 pt-4">
             <img src={skyLogo} alt="ChannelName"></img>
