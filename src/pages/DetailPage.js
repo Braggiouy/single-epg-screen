@@ -60,13 +60,13 @@ export default function DetailPage() {
           <div className="w-14 h-14 pt-4">
             <img src={skyLogo} alt="ChannelName"></img>
           </div>
-          <div className="px-4 flex flex-col w-3/4">
+          <div className="px-4 flex flex-col w-3/4 whitespace-nowrap">
             <div className="flex flex-row items-center">
               <span>Comedy Central </span>
-              <span className="text-custom-faded-grey pl-2 text-xs">
+              <span className="text-custom-faded-grey ml-2 text-xs">
                 14:30 - 17:00
               </span>
-              <span className="text-custom-faded-grey pl-2 text-xs">
+              <span className="text-custom-faded-grey ml-2 text-xs">
                 * 3 May
               </span>
             </div>
