@@ -1,1 +1,1 @@
-export const EQUIVALENT_RATIO = 5840 / 2400;
+export const PIXELS_IN_ONE_HOUR = 240;

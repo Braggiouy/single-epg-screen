@@ -86,22 +86,10 @@ export const focusCurrentTime = () => {
   });
 };
 
-export const transformToMilitaryTime = () => {
+export const getCurrentTimeInMinutes = () => {
   const now = new Date();
-  const timeOptions = {
-    hour: "2-digit",
-    minute: "2-digit",
-  };
-  const currentTime = now.toLocaleTimeString([], timeOptions);
-
-  let militaryTime = currentTime.replace(/\D/g, ""); // Remove non-digit characters
-
-  if (currentTime.includes("PM")) {
-    const hours = parseInt(militaryTime.substr(0, 2), 10);
-    militaryTime = ((hours % 12) + 12).toString() + militaryTime.substr(2);
-  } else {
-    militaryTime = militaryTime.substr(0, 4);
-  }
-
-  return militaryTime;
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const currentTimeInMinutes = hours * 60 + minutes;
+  return currentTimeInMinutes;
 };
