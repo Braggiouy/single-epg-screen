@@ -93,3 +93,13 @@ export const getCurrentTimeInMinutes = () => {
   const currentTimeInMinutes = hours * 60 + minutes;
   return currentTimeInMinutes;
 };
+
+export const isCurrentTimeWithinTimeSpan = (start, end) => {
+  const now = new Date();
+  const currentTime = now.getTime();
+
+  const startTime = new Date(start).getTime();
+  const endTime = new Date(end).getTime();
+
+  return currentTime >= startTime && currentTime <= endTime;
+};

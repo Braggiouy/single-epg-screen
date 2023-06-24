@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { formatTimeTo24Hour } from "../../../utils/utils";
-import { calculateWidth } from "../../../utils/utils";
+import {
+  formatTimeTo24Hour,
+  isCurrentTimeWithinTimeSpan,
+  calculateWidth,
+} from "../../../utils/utils";
 
 export default function ChannelRow({
   id,
@@ -25,8 +28,11 @@ export default function ChannelRow({
       <div className="flex flex-nowrap flex-row justify-center">
         {schedules
           ? schedules.map((program) => {
+              const { start, end } = program;
               const newkey = (counter += 1);
-              const width = calculateWidth(program.start, program.end);
+              const width = calculateWidth(start, end);
+              const isLive = isCurrentTimeWithinTimeSpan(start, end);
+
               // Construct the correct path. program.id uses a dummy id, so for better identification,
               // we will use program.title as the correct path
               const programUrl = `/${program.title}`;
@@ -42,9 +48,9 @@ export default function ChannelRow({
                   key={program.id + newkey}
                 >
                   <div
-                    className={
-                      "bg-program-background text-xs h-full border border-gray-600 hover:bg-gray-700 border-solid p-3"
-                    }
+                    className={`text-xs h-full border border-gray-600 border-solid p-3 ${
+                      isLive ? "bg-gray-600" : "bg-program-background"
+                    }`}
                     style={{ width: `${width}px` }}
                   >
                     <div className=" overflow-hidden flex-col min-w-max text-white">
